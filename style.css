@@ -1,7 +1,68 @@
 h1 {
-  color: darkgoldenrod;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  text-align: center;
+  font-size: 80px;
+  color: #00204a;
+}
+h2,
+.eleven {
   font-size: 50px;
+  color: #005792;
+}
+h3 {
+  font-size: 25px;
+  color: #005792;
+}
+h4 {
+  font-size: 17px;
+  color: #00204a;
+  margin-top: 7px;
+}
+h5 {
+  font-size: 20px;
+  color: #00204a;
+}
+
+form {
+  margin-top: 10px;
+}
+
+.units {
+  font-size: 18px;
+  color: #005792;
+}
+
+.ramka {
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: #efcc00 solid 2px;
+}
+
+.detali {
+  font-size: 30px;
+  margin-top: 30px;
+  color: #00204a;
+}
+.card-text {
+  font-size: 20px;
+  color: #005792;
+  text-align: center;
+}
+hr {
+  color: #efcc00;
+  font-weight: bold;
+}
+.time {
+  font-weight: bold;
+  font-size: 15px;
+  text-align: right;
+  color: #efcc00;
+}
+.humid {
+  color: #005792;
+  font-size: 15px;
+  font-weight: bolder;
+  text-align: center;
+}
+.minipic {
+  text-align: center;
 }
