@@ -65,6 +65,13 @@ function showPos(position) {
     let temperature = Math.round(response.data.main.temp);
     let numero = document.querySelector("#numero");
     numero.innerHTML = `${temperature}°C`;
+    let minimal = Math.round(response.data.main.temp_min);
+    let mintemp = document.querySelector("#mintemp");
+    mintemp.innerHTML = `${minimal}°C`;
+    let wind = response.data.wind.speed;
+    let wind1 = Math.round((wind * 1000) / 60);
+    let span2 = document.querySelector("#winnn");
+    span2.innerHTML = `${wind1}`;
   }
   axios.get(apiUrl).then(showTemp);
 }
