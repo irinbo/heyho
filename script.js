@@ -52,8 +52,6 @@ function showTemperature(response) {
   console.log(response.data);
 }
 
-//
-
 function showPos(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -67,12 +65,53 @@ function showPos(position) {
     let minimal = Math.round(response.data.main.temp_min);
     let mintemp = document.querySelector("#mintemp");
     mintemp.innerHTML = `${minimal}°C`;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+    let discripto = response.data.weather[0].description;
+    let bigCity = document.querySelector("#bigCity");
+    bigCity.innerHTML = `It's ${discripto} today`;
     let wind = response.data.wind.speed;
     let wind1 = Math.round((wind * 1000) / 60);
     let span2 = document.querySelector("#winnn");
     span2.innerHTML = `${wind1}`;
+
+    celstemperature = response.data.main.temp;
   }
   axios.get(apiUrl).then(showTemp);
 }
+
+//
+function displayFarengo(event) {
+  event.preventDefault();
+  let numero = document.querySelector("#numero");
+  celsolink.classList.remove("active");
+  farengolink.classList.add("active");
+
+  let farengTemp = celstemperature * 1.8 + 32;
+  numero.innerHTML = `${Math.round(farengTemp)}°F`;
+}
+
+function displayCelso(event) {
+  event.preventDefault();
+  celsolink.classList.add("active");
+  farengolink.classList.remove("active");
+
+  let numero = document.querySelector("#numero");
+  numero.innerHTML = `${Math.round(celstemperature)}°C`;
+}
+
+let celstemperature = null;
+
+let farengolink = document.querySelector("#farenn");
+farengolink.addEventListener("click", displayFarengo);
+
+let celsolink = document.querySelector("#celss");
+celsolink.addEventListener("click", displayCelso);
+
+//
 
 navigator.geolocation.getCurrentPosition(showPos);

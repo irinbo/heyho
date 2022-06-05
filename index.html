@@ -22,12 +22,13 @@
     <div class="container ramka">
       <div class="row">
         <div class="col-5">
-          <h1><span id="numero"> 16°C </span> <span class="units"><a href="#" id="celss">C°</a>
-            | <a href="#" id="farenn">F°</a></span></h1>
+          <h1><span id="numero"> 16°C </span> <span class="units"><a href="#" id="celss">°C</a>
+            | <a href="#" id="farenn">°F</a></span></h1>
           <h2 class="eleven" id="mintemp">11°C</h2>
           <div class="row mt-2">
             <div class="col-5">
-              <img src="https://user-images.githubusercontent.com/106463759/170857127-6d63e54b-1d72-4b2a-a6a0-d79f6919f2d4.png" class="card-img" alt="sun and clouds" />
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" /></div>
             </div>
             <div class="col-7">
               <hr>
@@ -40,7 +41,7 @@
           </div>
         </div>
         <div class="col-7">
-          <h2 class="eleven" id="bigCity">weather🌡️</h2>
+          <h2 class="eleven" id="bigCity">weather</h2>
           <form id="search-form">
             <input
               type="text"
